@@ -1,6 +1,6 @@
 package default_static;
 
-public class MainClass {
+public class InterfaceDemo {
 
     public static void main(String[] args) {
         ExampleClass exampleClass = new ExampleClass();

@@ -1,12 +1,10 @@
 package method_reference;
 
-import default_static.InterfaceExample2;
-
 import java.util.Arrays;
 import java.util.List;
 import java.util.function.BiFunction;
 
-public class MethodReferenceExample {
+public class MethodReferenceDemo {
 
     public static void referenceExample(){
         System.out.println("This is a reference call");
@@ -15,7 +13,7 @@ public class MethodReferenceExample {
 
     public static void main(String[] args) {
 
-        Runnable runnable = MethodReferenceExample::referenceExample;
+        Runnable runnable = MethodReferenceDemo::referenceExample;
         runnable.run();
 
         List<String> nameList = Arrays.asList("Ali", "Veli", "Ahmet", "Mehmet");

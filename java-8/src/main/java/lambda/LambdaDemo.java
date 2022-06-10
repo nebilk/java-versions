@@ -1,6 +1,6 @@
 package lambda;
 
-public class LambdaMain {
+public class LambdaDemo {
 
     public static void main(String[] args) {
         Drawable drawable = new Drawable() {
