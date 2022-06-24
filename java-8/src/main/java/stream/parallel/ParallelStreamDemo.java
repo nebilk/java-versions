@@ -1,76 +1,12 @@
 package stream.parallel;
 
-import java.util.ArrayList;
+import person.Person;
+import person.PersonService;
+
 import java.util.List;
-import java.util.Random;
 import java.util.stream.IntStream;
 
-class Person {
-    private int identityNumber;
-    private String name;
-    private String lastName;
-    private int age;
-
-    public Person(int identityNumber, String name, String lastName, int age) {
-        this.identityNumber = identityNumber;
-        this.name = name;
-        this.lastName = lastName;
-        this.age = age;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "identityNumber=" + identityNumber +
-                ", name='" + name + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", age=" + age +
-                '}';
-    }
-
-    public int getIdentityNumber() {
-        return identityNumber;
-    }
-
-    public void setIdentityNumber(int identityNumber) {
-        this.identityNumber = identityNumber;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getLastName() {
-        return lastName;
-    }
-
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
-    }
-
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-}
-
-
 public class ParallelStreamDemo {
-
-    private static List<Person> getRandomPersons() {
-        List<Person> personList = new ArrayList<>();
-        for (int i = 1; i <= 1000; i++) {
-            personList.add(new Person(i, "person " + i, "lastName", new Random().nextInt(1000 * 100)));
-        }
-        return personList;
-    }
 
     public static void main(String[] args) {
         long start = 0;
@@ -98,7 +34,7 @@ public class ParallelStreamDemo {
                 }
         );
 
-        final List<Person> randomEmployees = getRandomPersons();
+        final List<Person> randomEmployees = PersonService.getRandomPeople();
 
         start = System.currentTimeMillis();
         final double salaryAverage = randomEmployees.stream()

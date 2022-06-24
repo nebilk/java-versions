@@ -1,5 +1,9 @@
 package stream.map;
 
+
+import person.Person;
+import person.PersonService;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
@@ -36,18 +40,6 @@ public class MapDemo {
      * flatMap -> ["a", "b", "c", "d", "d", "b", "b", "1"]
      * distinct -> ["a", "b", "c", "d", "1"]
      */
-  }
-
-  private static List<Person> generatePersons(){
-    return Arrays.asList(
-            new Person(1, "Ali", "+9011", Arrays.asList("Address 1", "Address 2")),
-            new Person(2, "Veli", "+9022", Arrays.asList("Address 3", "Address 4")),
-            new Person(3, "Mehmet", "+9033", Arrays.asList("Address 5", "Address 6")),
-            new Person(4, "Ahmet", "+9044", Arrays.asList("Address 7", "Address 8")),
-            new Person(5, "Can", "+9055", Arrays.asList("Address 9", "Address 10")),
-            new Person(6, "Cem", "+9066", Arrays.asList("Address 11", "Address 12")),
-            new Person(7, "Osman", "+9077", Arrays.asList("Address 13", "Address 14"))
-    );
   }
 
   private static void printPhoneList(List<Person> personList){
@@ -117,7 +109,7 @@ public class MapDemo {
 
     System.out.println("------------------");
 
-    List<Person> personList = generatePersons();
+    List<Person> personList = PersonService.getRandomPeople();
 
     printPhoneList(personList);
 
